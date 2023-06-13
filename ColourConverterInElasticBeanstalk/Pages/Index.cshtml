@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Colour Converter Running on Elastic Beanstalk</h1>
+    
+    <!--    add 2 forms, 1 takes in rgb value in the format "255,255,255", the other hex value "#a1a1a1"
+            these take each value, and either convert to rgb or to hex values using code behind methods
+    -->
+
+    <form method="post">
+        <div class="form-group">
+            <label for="rgb">RGB Value</label>
+            <input type="text" class="form-control" id="rgb" name="rgb" placeholder="255,255,255">
+        </div>
+        <button type="submit" class="btn btn-primary">Convert to Hex</button>
+    </form>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="hex">Hex Value</label>
+            <input type="text" class="form-control" id="hex" name="hex" placeholder="#a1a1a1">
+        </div>
+        <button type="submit" class="btn btn-primary">Convert to RGB</button>
+    </form>
+
+    <br />
+    <br />
+
+    <div class="form-group">
+        <label for="hex">Result</label>
+        <input type="text" class="form-control" id="result" name="result" placeholder="Result" value="@Model.Result" readonly>
+    </div>
+</div>
